@@ -31,11 +31,12 @@ The **outputs** we expect must be positive floats which represent the predicted 
 The model is a **Cox proportional hazard** ([Cox-PH](http://www.sthda.com/english/wiki/cox-proportional-hazards-model)) model.
 
 The model regresses the proportional risk (individual risk factor) of each patient in the dataset, based on the TNM staging of this patient at t=0. The proportional risk at time *t* is formulated as follows:  
+
 <p align='center'>
-  <img src="http://www.sciweavers.org/tex2img.php?eq=h%28t%20%7C%20x%29%3Dh_%7B0%7D%20%28t%29e%5E%7B%20%5Cbeta%20%5E%7BT%7Dx%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="h(t | x)=h_{0} (t)e^{ \beta ^{T}x}" width="151" height="24" />
+  <img src="https://render.githubusercontent.com/render/math?math=\Large h(t | x) =  h_{0}(t) e^{ \beta ^{T} x }  ">
 </p>
 
-where ![img](http://www.sciweavers.org/tex2img.php?eq=h_%7B0%7D%28t%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) is the baseline proportional risk factor, __*x*__ is a vector of covariates, and __*β*__ is the vector of fitted coefficients whose entries measure the impact of each covariate on the survival function.
+where ![img](https://render.githubusercontent.com/render/math?math=\large%20h_{0}(t)) is the baseline proportional risk factor, __*x*__ is a vector of covariates, and __*β*__ is the vector of fitted coefficients whose entries measure the impact of each covariate on the survival function.
 
 The baseline model proposed reaches a **Concordance Index (CI)** of **0.691** on the public test set.
 
