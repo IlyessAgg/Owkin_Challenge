@@ -44,19 +44,30 @@ The baseline model proposed reaches a **Concordance Index (CI)** of **0.691** on
 
 The __*concordance index (C-index)*__ is a generalization of the *Area Under the Curve (or AUC)* which can take into account censored data. This metric is commonly used to evaluate and compare predictive models with censored data. The *C-index* evaluates whether predicted survival times are ranked in the same order as their true survival time.
 
-## Approach & Challenges
+## Approach
 
-In my approach, I focused mainly on the radiomics features extracted from the images and the clinical data to build my model. I was able to build a model with a *C-index* of **0.723** on the first test set, but that model failed to generalize as it scored only **0.51** on the second test set.  
-That bias can be explained by the fact that the test sets are very small (63 patients) and as such variability between the two test sets is expected. However, the small size of the datasets is a real life problem that we have to deal with.  
-Moreover, the challenge mentions that several studies point out that hand-defined features such as the ones used in our study can be highly biased and suboptimal for various tasks which could also be the origin of our bias.
+### First approach
 
-*You can check my notebook [here](https://github.com/IlyessAgg/Owkin_Challenge/blob/master/Challenge.ipynb).*  
+My first approach of the challenge focused mainly on the radiomics features extracted from the images and the clinical data to build my model. I was able to build a model with a *C-index* of **0.723** on the first test set, but that model failed to generalize as it scored only **0.51** on the second test set.  
 
-## Improvements
+*You can check my notebook [here](https://github.com/IlyessAgg/Owkin_Challenge/blob/master/First_Approach/First_Approach_Challenge.ipynb).*  
+
+#### Improvements
 
 Here are some ideas as to what I could've done to improve the estimate of the patient's survival time :
 
 * Improving our feature selection method such as to find a better combination of features.
 * Including imaging modality to overcome bias from hand-defined features as we could train a network that would extract radiomics features directly from the images. We could also extract other features from our images, using a CNN for example, and build a network to select the most appropriate features for the task.
-* Taking into account the censoring of the data. 
 
+### Second approach
+
+After completing the [AI For Medicine Specialization](https://www.coursera.org/specializations/ai-for-medicine), I wanted to give this challenge a try again. For my second approach, I made sure to improve on the mistakes I had made on my first approach and make use of the **imaging modalities**.
+
+The model that performed the best was the Cox Proportional Model with a penalizer of **15.0**. It achieved **0.7212** on the test set.
+
+#### Improvements
+
+Other ideas I wanted to try include :
+
+- Using a CNN to generate new features.
+- Test DeepSurv model.
