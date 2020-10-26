@@ -65,6 +65,8 @@ After completing the [AI For Medicine Specialization](https://www.coursera.org/s
 
 The model that performed the best was the Cox Proportional Model with a penalizer of **15.0**. It achieved **0.7212** on the test set.
 
+*You can check my notebook [here](https://github.com/IlyessAgg/Owkin_Challenge/blob/master/Challenge_Second_Try.ipynb).*  
+
 #### Improvements
 
 Other ideas I wanted to try include :
